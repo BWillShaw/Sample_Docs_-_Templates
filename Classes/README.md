@@ -8,6 +8,49 @@ Learn Python classes through hands-on exercises. Each exercise focuses on differ
 
 ---
 
+## Class Template in Python
+
+Here is a generic template to start building a class in Python:
+
+```python
+class ClassName:
+    # Class attribute
+    class_attribute = "I am a class attribute"
+
+    # Initializer / Instance attributes
+    def __init__(self, attribute1, attribute2):
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    # Instance method
+    def instance_method(self):
+        return f"Hello, I am an instance method. I have access to {self.attribute1}."
+
+    # Class method
+    @classmethod
+    def class_method(cls):
+        return f"Hello, I am a class method. I have access to {cls.class_attribute}."
+
+    # Static method
+    @staticmethod
+    def static_method():
+        return "Hello, I am a static method. I don't have access to any class or instance attributes."
+
+# Create an instance
+instance = ClassName("attribute1_value", "attribute2_value")
+
+# Call instance method
+print(instance.instance_method())
+
+# Call class method
+print(ClassName.class_method())
+
+# Call static method
+print(ClassName.static_method())
+```
+
+---
+
 ## Table of Contents
 
 1. [Person Class - Basics](#exercise-1-person-class---basics)
