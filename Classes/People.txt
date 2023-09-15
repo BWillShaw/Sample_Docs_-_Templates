@@ -1,0 +1,3 @@
+Betty, Boop, 200
+Bugs, Bunny, 150
+Betsy, Braddock, 35
