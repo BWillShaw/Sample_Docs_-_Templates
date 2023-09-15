@@ -1,7 +1,5 @@
-
-
-from tkinter import FIRST
-
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
 class Person:
     species = "human" # species created as class attribute
@@ -20,17 +18,17 @@ class Person:
             lines = txt_file.readlines()
             for line in lines:
                 first_name, last_name, age = line.strip().split(",")
-                self.first_name = first_name
-                self.last_name = last_name
-                self.age = age
                 staff.append(Person(first_name, last_name, age))
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}, Age: {self.age}"
                 
 if __name__ == "__main__":
-    
+  
     staff = []
+    
+    Tk().withdraw()
+    file_path = askopenfilename()
 
     first_name = input("\nPlease enter your first name: ").lower()
     last_name = input("\nPlease enter your last name: ").lower()
@@ -38,8 +36,12 @@ if __name__ == "__main__":
     
     person_obj = Person(first_name, last_name, age)
     staff.append(person_obj)
+                 
     
-    person_obj.import_txt(r"C:\Users\brand\source\repos\Sample_Docs_-_Templates\Classes\People.txt")
+    person_obj.import_txt(file_path)
+
+    
+    #person_obj.import_txt(r"C:\Users\brand\source\repos\Sample_Docs_-_Templates\Classes\People.txt")
     
     print("\n")
     for person in staff:
